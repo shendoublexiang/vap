@@ -53,6 +53,8 @@ typedef NS_ENUM(NSUInteger, QGVAPWrapViewContentMode) {
 @property (nonatomic, assign) QGVAPWrapViewContentMode contentMode;
 // 是否在播放完成后自动移除内部VAPView, 如果外部用法会复用当前View，可以不移除
 @property (nonatomic, assign) BOOL autoDestoryAfterFinish;
+// 在退后台时的行为，默认为结束
+@property (nonatomic, assign) HWDMP4EBOperationType enterBackgroundOP;
 
 - (void)playHWDMP4:(NSString *)filePath
        repeatCount:(NSInteger)repeatCount

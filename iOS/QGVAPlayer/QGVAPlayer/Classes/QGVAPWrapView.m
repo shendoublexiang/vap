@@ -42,12 +42,14 @@
 
 - (void)commonInit {
     _autoDestoryAfterFinish = YES;
+    _enterBackgroundOP = HWDMP4EBOperationTypeStop;
 }
 
 // 因为播放停止后可能移除VAPView，这里需要加回来
 - (void)initVAPViewIfNeed {
     if (!_vapView) {
         _vapView = [[VAPView alloc] initWithFrame:self.bounds];
+        _vapView.hwd_enterBackgroundOP = self.enterBackgroundOP;
         [self addSubview:_vapView];
     }
 }
